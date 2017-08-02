@@ -1,0 +1,9 @@
+Kevinkumar Patel: patelke7
+Filip Tomin: tominfil 
+Revision #: 36
+
+Discussion:
+    This monitor might induce starvation by having one lane with a seemingly infinite amount of cars blocking quadrants that another lane's cars might need to pass through. If the first lane is allowed to constantly send the cars by the OS then the other lane is starved.   
+
+Problems encountered:
+	When testing we went into deadlock since we weren't releasing a lock properly in car_arrive. After fixing that all tests were passing. It's difficult to diagnose where the issue lies within the locks.
